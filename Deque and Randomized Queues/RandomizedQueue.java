@@ -104,3 +104,23 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     public Iterator<Item> iterator(){
     	return new randomIterator();
     }
+	
+// unit testing (required)
+    public static void main(String[] args) {
+    	RandomizedQueue<String> randomizedQueue = new RandomizedQueue<String>();
+        randomizedQueue.enqueue("Hello");
+        randomizedQueue.enqueue("WOrld");
+        randomizedQueue.enqueue("!");
+        randomizedQueue.dequeue();
+        
+        System.out.println(randomizedQueue.size());
+        Iterator<String> iterator1 = randomizedQueue.iterator();
+        Iterator<String> iterator2 = randomizedQueue.iterator();
+        while (iterator1.hasNext()) {
+            System.out.print(iterator1.next());
+        }
+        while (iterator2.hasNext()) {
+            System.out.print(iterator2.next());
+        }
+    }
+}
