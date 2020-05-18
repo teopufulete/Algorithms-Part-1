@@ -11,7 +11,6 @@ public class LineSegment {
         this.q = q;
     }
 
-    
 
     public void draw() {
         p.drawTo(q);
@@ -22,9 +21,8 @@ public class LineSegment {
         return p + " -> " + q;
     }
 
-
+    
     public int hashCode() {
         throw new UnsupportedOperationException();
     }
-
 }
