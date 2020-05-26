@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BruteCollinearPoints {
-	 private ArrayList<LineSegment> Segments = new ArrayList<>();
+	private ArrayList<LineSegment> Segments = new ArrayList<>();
 	 
-	
 	//finds all line segments containing 4 points
 	public BruteCollinearPoints(Point[] points) {
 		if (points == null) 
@@ -18,23 +17,21 @@ public class BruteCollinearPoints {
 		}
 		
 		for (int first = 0; first < Copy.length - 3; first++) {
-            for (int second = first + 1; second < Copy.length - 2; second++) {
-                double slopeFS = Copy[first].slopeTo(Copy[second]);
-                for (int third = second + 1; third < Copy.length - 1; third++) {
-                    double slopeFT = Copy[first].slopeTo(Copy[third]);
-                    if (slopeFS == slopeFT) {
-                        for (int fourth = third + 1; fourth < Copy.length; fourth++) {
-                            double slopeFF = Copy[first].slopeTo(Copy[fourth]);
-                            if (slopeFS == slopeFF) {
-                                Segments.add(new LineSegment(Copy[first], Copy[fourth]));
-                            }
-                        }
-                    }
-                }
-            }
-        }
+			for (int second = first + 1; second < Copy.length - 2; second++) {
+				double slopeFS = Copy[first].slopeTo(Copy[second]);
+				for (int third = second + 1; third < Copy.length - 1; third++) {
+					if (slopeFS == slopeFT) {
+						for (int fourth = third + 1; fourth < Copy.length; fourth++) {
+							double slopeFF = Copy[first].slopeTo(Copy[fourth]);
+							if (slopeFS == slopeFF) {
+								Segments.add(new LineSegment(Copy[first], Copy[fourth]));
+                            				}
+                        			}
+                    			}
+               			}
+            		}
+        	}
 	}
-	
 		
 	private boolean hasDuplicate(Point[] points) {
         for (int i = 0; i < points.length - 1; i++) {
