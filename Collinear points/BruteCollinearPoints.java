@@ -34,13 +34,13 @@ public class BruteCollinearPoints {
 	}
 		
 	private boolean hasDuplicate(Point[] points) {
-        for (int i = 0; i < points.length - 1; i++) {
-            if (points[i].compareTo(points[i + 1]) == 0) {
-                return true;
-            }
-        }
-        return false;
-    }
+		for (int i = 0; i < points.length - 1; i++) {
+			if (points[i].compareTo(points[i + 1]) == 0) {
+				return true;
+            		}
+        	}
+        	return false;
+    	}
 	
 	
 	// the number of line segments
