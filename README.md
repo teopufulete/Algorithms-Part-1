@@ -1,2 +1,2 @@
-# Algorithms-Part-1
+# Algorithms-in-Java
 Collection of algorithms: from basic to complex
