@@ -42,3 +42,29 @@ public class FastCollinearPoints {
             }
         }
     }
+    
+    
+      // the number of line segments
+    public int numberOfSegments() {
+        return Segments.size();
+    }
+
+    
+    // the line segments
+    public LineSegment[] segments() {
+        return Segments.toArray(new LineSegment[Segments.size()]);
+    }
+
+    
+    // test the whole array for duplicate points
+    private boolean hasDuplicate(Point[] points) {
+        for (int i = 0; i < points.length - 1; i++) {
+            if (points[i].compareTo(points[i + 1]) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+    
