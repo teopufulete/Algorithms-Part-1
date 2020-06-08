@@ -18,4 +18,30 @@ public class Board {
             }
         }
     }
+	
+	
+	// board dimension n
+    public int dimension() {
+    	return n;
+    }
+
+    
+    
+    // number of tiles out of place
+    public int hamming() {
+        int out = 0;
+        int i = 1;
+        // from 1 to end
+        for (char c : Board) {
+            if ((int) c != 0 && (int) c != i) {
+                // check last properly
+                if ((int) c == Board.length - 1) {
+                    continue;
+                }
+                out++;
+            }
+            i++;
+        }
+        return out;
+    }
 }
