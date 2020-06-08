@@ -69,11 +69,40 @@ public class Board {
         }
         return out;
     }
-
-    
+ 
     
     // is this board the goal board?
     public boolean isGoal() {
     	return hamming() == 0;
+    }
+	
+	
+    // return the clone of current board on "false" input,
+    // and twin-copy if input param is "true"
+    private Board copyButTwin(boolean twn) {
+        boolean twined = false;
+        
+        // clone 1D array into 2D
+        int[][] twinBoard = new int[n][n];
+        int Index = 0;
+        int One = 0, Two = 0;
+        for (int i = 0; i < n; i++) {
+            for (int k = 0; k < n; k++) {
+                twinBoard[i][k] = this.Board[Index++];
+                // find first two tiles (not DIRKA) and remember to swap
+                if (!twined && Index > 0 && (int) this.Board[Index - 1] != DIRKA
+                        && (int) this.Board[Index] != DIRKA) {
+                    One = Index;
+                    Two = Index - 1;
+                    twined = true;
+                }
+            }
+        }
+        
+        Board twin = new Board(twinBoard);
+        if (twn) {
+            twin.swapTiles(One, Two);
+        }
+        return twin;
     }
 }
