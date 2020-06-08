@@ -44,4 +44,36 @@ public class Board {
         }
         return out;
     }
+	
+	
+// sum of Manhattan distances between tiles and goal
+    public int manhattan() {
+    	int out = 0;
+        int i = 1;
+	    
+        // from 1 to end
+        for (char c : Board) {
+            if ((int) c != 0 && (int) c != i) {
+                // check last properly
+                if ((int) c == Board.length - 1) {
+                    continue;
+                }
+                // row steps
+                final int dR = toXY((int) c)[0] - toXY(i)[0];
+                // colomn
+                final int dC = toXY((int) c)[1] - toXY(i)[1];
+                // count all
+                out += java.lang.Math.abs(dR) + java.lang.Math.abs(dC);
+            }
+            i++;
+        }
+        return out;
+    }
+
+    
+    
+    // is this board the goal board?
+    public boolean isGoal() {
+    	return hamming() == 0;
+    }
 }
