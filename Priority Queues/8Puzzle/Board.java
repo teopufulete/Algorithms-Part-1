@@ -105,4 +105,22 @@ public class Board {
         }
         return twin;
     }
+
+	// does this board equal y?
+    public boolean equals(Object y) {
+    	 if (y == null)
+             return false;
+         if (y == this)
+             return true;
+         if (y.getClass() != this.getClass())
+             return false;
+         Board that = (Board) y;
+         if (that.dimension() != this.dimension())
+             return false;
+         for (int i = 0; i < that.dimension() * that.dimension(); i++) {
+             if (this.Board[i] != that.Board[i])
+                 return false;
+         }
+         return true;
+    }
 }
