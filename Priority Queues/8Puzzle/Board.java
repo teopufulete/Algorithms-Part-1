@@ -20,7 +20,7 @@ public class Board {
     }
 	
 	
-	// board dimension n
+    // board dimension n
     public int dimension() {
     	return n;
     }
@@ -46,7 +46,7 @@ public class Board {
     }
 	
 	
-// sum of Manhattan distances between tiles and goal
+    // sum of Manhattan distances between tiles and goal
     public int manhattan() {
     	int out = 0;
         int i = 1;
@@ -191,5 +191,86 @@ public class Board {
         char aux = this.Board[i];
         this.Board[i] = this.Board[k];
         this.Board[k] = aux;
+    }
+	
+	
+    // a board that is obtained by exchanging any pair of tiles
+    // first pair of non-dirka blocks
+    public Board twin() {
+    	return this.copyButTwin(true);
+    }
+    
+    
+    // returns Board as matrix toString
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(n + "\n");
+        int lol = 0;
+        for (int i = 0; i < Board.length; i++) {
+            sb.append(String.format("%2d ", (int) Board[i]));
+            // always make new line followed by matrix dimension
+            if (lol++ % n == n - 1) {
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }
+	
+	
+    // unit testing (not graded)
+    public static void main(String[] args) {
+    	int n = 3;
+        int blocks[][] = new int[n][];
+        System.out.println("Board fields:");
+        for(int i = 0; i < n; ++i) {
+            blocks[i] = new int[n];
+            for(int j = 0; j < n; ++j) {
+                blocks[i][j] = i * n + j;
+                System.out.print(blocks[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Creating Board");
+        Board board = new Board(blocks);
+        System.out.println(board);
+
+        System.out.println("Twin:");
+        Board twin = board.twin();
+        System.out.println(twin);
+        assert(!twin.equals(board));
+
+        System.out.println("Neighbours:");
+        for(Board b : board.neighbors()) {
+            System.out.println("Hamming = " + b.hamming() + " Manhattan = " + b.manhattan());
+            System.out.println(b);
+        }
+
+        System.out.println("Board fields:");
+        blocks[0] = new int[] {1, 0, 2};
+        blocks[1] = new int[] {3, 4, 5};
+        blocks[2] = new int[] {6, 7, 8};
+        
+        for(int i = 0; i < n; ++i) {
+            for(int j = 0; j < n; ++j) {
+                System.out.print(blocks[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Creating Board");
+        board = new Board(blocks);
+        System.out.println(board);
+
+        System.out.println("Twin:");
+        twin = board.twin();
+        System.out.println(twin);
+        assert(!twin.equals(board));
+
+        System.out.println("Neighbours:");
+        for(Board b : board.neighbors()) {
+            System.out.println("Hamming = " + b.hamming() + " Manhattan = " + b.manhattan());
+            System.out.println(b);
+        }
     }
 }
