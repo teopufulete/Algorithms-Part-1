@@ -184,4 +184,12 @@ public class Board {
         int y = (d - 1) % n;
         return new int[] { x, y };
     }
+	
+	
+    // swap tiles i and k of this.jBoard
+    private void swapTiles(int i, int k) {
+        char aux = this.Board[i];
+        this.Board[i] = this.Board[k];
+        this.Board[k] = aux;
+    }
 }
