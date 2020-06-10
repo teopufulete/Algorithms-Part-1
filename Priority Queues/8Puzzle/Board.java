@@ -123,4 +123,21 @@ public class Board {
          }
          return true;
     }
+	
+	
+// all neighboring boards
+    public Iterable<Board> neighbors() {
+    	Queue<Board> Neighbors = new Queue<Board>();
+        int currentDIRKAIndex = -1;
+        
+        // try to find dirka
+        for (int i = 0; i < Board.length; i++) {
+            if (Board[i] == DIRKA) {
+                currentDIRKAIndex = i;
+                break;
+            }
+        }
+        
+        int i = currentDIRKAIndex / n;
+        int j = currentDIRKAIndex % n;
 }
