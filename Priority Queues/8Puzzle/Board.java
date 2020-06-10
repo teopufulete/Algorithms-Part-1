@@ -106,7 +106,7 @@ public class Board {
         return twin;
     }
 
-	// does this board equal y?
+    // does this board equal y?
     public boolean equals(Object y) {
     	 if (y == null)
              return false;
@@ -124,8 +124,7 @@ public class Board {
          return true;
     }
 	
-	
-// all neighboring boards
+    // all neighboring boards
     public Iterable<Board> neighbors() {
     	Queue<Board> Neighbors = new Queue<Board>();
         int currentDIRKAIndex = -1;
@@ -140,4 +139,34 @@ public class Board {
         
         int i = currentDIRKAIndex / n;
         int j = currentDIRKAIndex % n;
+
+	// dirka moves UP
+        if (i - 1 >= 0) {
+            Board u = this.copyButTwin(false);
+            u.swapTiles(currentDIRKAIndex, xyTo1D(i - 1, j));
+            Neighbors.enqueue(u);
+        }
+        
+        // dirka moves down
+        if (i + 1 < n) {
+            Board d = this.copyButTwin(false);
+            d.swapTiles(currentDIRKAIndex, xyTo1D(i + 1, j));
+            Neighbors.enqueue(d);
+        }
+        
+        // dirka moves left
+        if (j - 1 >= 0) {
+            Board l = this.copyButTwin(false);
+            l.swapTiles(currentDIRKAIndex, xyTo1D(i, j - 1));
+            Neighbors.enqueue(l);
+        }
+        
+        // dirka moves right
+        if (j + 1 < n) {
+            Board r = this.copyButTwin(false);
+            r.swapTiles(currentDIRKAIndex, xyTo1D(i, j + 1));
+            Neighbors.enqueue(r);
+        }
+        return Neighbors;
+     }
 }
