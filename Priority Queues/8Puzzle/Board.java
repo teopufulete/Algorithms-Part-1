@@ -169,4 +169,11 @@ public class Board {
         }
         return Neighbors;
      }
+	
+	
+    // returns [position] in 1D array from [X][Y] position of 2D array
+    private int xyTo1D(final int x, final int y) {
+        return (n * (x) + y);
+    }
+    
 }
