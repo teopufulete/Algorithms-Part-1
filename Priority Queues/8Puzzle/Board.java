@@ -176,4 +176,12 @@ public class Board {
         return (n * (x) + y);
     }
     
+	
+    // returns {X,Y} coords from [1D] coordinate.
+    // init array count begins from 1 !!!
+    private int[] toXY(final int d) {
+        int x = (d - 1) / n;
+        int y = (d - 1) % n;
+        return new int[] { x, y };
+    }
 }
