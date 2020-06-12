@@ -81,6 +81,19 @@ public class Solver {
     
     // sequence of boards in a shortest solution
     public Iterable<Board> solution() {
+	        	 JNode sequenceNode = bNode;
+
+         if (isSolvable()) {
+             Stack<Board> solutionQueue = new Stack<Board>();
+
+             solutionQueue.push(sequenceNode.getjBoard());
+             while (sequenceNode.prev != null) {
+                 sequenceNode = sequenceNode.prev;
+                 solutionQueue.push(sequenceNode.getjBoard());
+             }
+             return solutionQueue;
+         } 
+         else return null;
     }
     
     
