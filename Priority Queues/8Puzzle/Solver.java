@@ -98,5 +98,40 @@ public class Solver {
     
     
      private class JNode implements Comparable<JNode> {
+	private JNode prev;
+        private final Board jBoard;
+        private final int moves;
+
+        public JNode(Board jBoard, int moves) {
+            this.jBoard = jBoard;
+            this.moves = moves;
+            prev = null;
+        }
+
+        public Board getjBoard() {
+            return jBoard;
+        }
+
+        public boolean isGoal() {
+            return jBoard.isGoal();
+        }
+
+        public Iterable<Board> neighbors() {
+            return jBoard.neighbors();
+        }
+
+        // add moves to simple manhattan
+        public int heuristic() {
+            return jBoard.manhattan() + moves;
+        }
+
+        public int compareTo(JNode that) {
+            return this.heuristic() - that.heuristic();
+        }
+
+        public String toString() {
+            return jBoard.toString();
+        }
+    }
     }
 }
