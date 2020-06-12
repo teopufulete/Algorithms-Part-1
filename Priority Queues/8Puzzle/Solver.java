@@ -56,6 +56,18 @@ public class Solver {
     
     // returns true if the initial board solvable
     public boolean isSolvable() {
+	// get solved
+        JNode firstNode = bNode;
+        
+        // and move backwards to the start
+        while (firstNode.prev != null) {
+            firstNode = firstNode.prev;
+        }
+        
+        // compare init state
+        // if solved one not twin, so exactly initial was solvable haha xD
+        // or vise versa
+        return firstNode.getjBoard().equals(TwinNode.getjBoard()) ? false : true;
     }
 
     
