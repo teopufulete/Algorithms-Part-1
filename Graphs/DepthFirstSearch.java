@@ -11,8 +11,15 @@ public class DepthFirstSearch {
     }
 
 
+    // dfs from v
     private void dfs(Graph G, int v) {
-
+        count++;
+        marked[v] = true;
+        for (int w : G.adj(v)) {
+            if (!marked[w]) {
+                dfs(G, w);
+            }
+        }
     }
 
 
