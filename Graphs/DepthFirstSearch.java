@@ -24,7 +24,8 @@ public class DepthFirstSearch {
 
 
     public boolean marked(int v) {
-
+        validateVertex(v);
+        return marked[v];
     }
 
 
