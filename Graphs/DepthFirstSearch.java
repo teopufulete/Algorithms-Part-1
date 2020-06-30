@@ -33,8 +33,15 @@ public class DepthFirstSearch {
         return count;
     }
 
+    
+    // throw an IllegalArgumentException unless 0 <= v < V
+    private void validateVertex(int v) {
+        int V = marked.length;
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
 
-
+    
     public static void main(String[] args) {
                     StdOut.println("connected");
     }
