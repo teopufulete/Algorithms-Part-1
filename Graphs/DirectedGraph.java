@@ -24,7 +24,29 @@ public class DirectedGraph {
     
     // Initializes a digraph from the specified input stream. 
     public DirectedGraph(In input) {
-      
+        if (in == null) throw new IllegalArgumentException("argument is null");
+        
+        try {
+            this.vertices = in.readInt();
+            if (vertices < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be nonnegative");
+            indegree = new int[vertices];
+            list = (Bag<Integer>[]) new Bag[vertices];
+            for (int vertex = 0; vertex < vertices; vertex++) {
+                list[vertex] = new Bag<Integer>();
+            }
+            
+            int edges = in.readInt();
+            if (edges < 0) throw new IllegalArgumentException("number of edges in a Digraph must be nonnegative");
+            for (int i = 0; i < edges; i++) {
+                int vertex = in.readInt();
+                int destination = in.readInt();
+                addEdge(vertex, destination); 
+            }
+        }
+ 
+        catch (NoSuchElementException e) {
+            throw new IllegalArgumentException("invalid input format in Digraph constructor", e);
+        } 
     }
 
 
