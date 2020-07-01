@@ -58,7 +58,7 @@ public class DirectedGraph {
       
     // Returns the number of vertices in this digraph.
     public int vertices() {
-       
+       return vertices;
     }
 
 
