@@ -18,11 +18,12 @@ class Graph {
   
     // Function to add an edge into the graph 
     void addEdge(int source, int destination) { 
-       
+        list[source].addFirst(destination); //add edge
+        list[destination].addFirst(source); //add back edge (for undirected)
     } 
   
 
-    public void printGraph(){    
+    public void printGraph() {    
     } 
   
 
