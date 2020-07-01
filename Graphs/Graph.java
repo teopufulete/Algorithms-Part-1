@@ -1,8 +1,13 @@
+//adjacency list graph representation
+import java.util.LinkedList;
+
 class Graph { 
+    private int vertex;   // No. of vertices 
+    private LinkedList<Integer> list[]; // Adjacency Lists 
 
   
     // Constructor 
-    Graph(int v) { 
+    public Graph(int vertex) { 
        
     } 
   
@@ -11,12 +16,11 @@ class Graph {
        
     } 
   
-    // prints BFS traversal from a given source s 
-    void BFS(int s) { 
-        
+
+    public void printGraph(){    
     } 
   
-    // Driver method to 
+
     public static void main(String args[]) { 
         
     } 
