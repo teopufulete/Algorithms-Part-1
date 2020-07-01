@@ -25,7 +25,6 @@ public class DirectedGraph {
     // Initializes a digraph from the specified input stream. 
     public DirectedGraph(In input) {
         if (in == null) throw new IllegalArgumentException("argument is null");
-        
         try {
             this.vertices = in.readInt();
             if (vertices < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be nonnegative");
@@ -52,7 +51,11 @@ public class DirectedGraph {
 
     // Initializes a new digraph that is a deep copy of the specified digraph.
     public DirectedGraph(DirectedGraph G) {
-       
+        if (G == null) throw new IllegalArgumentException("argument is null");
+
+        this.vertices = G.vertices();
+        this.edges = G.edges();
+        if (vertices < 0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
     }
       
       
