@@ -61,6 +61,12 @@ public class DirectedGraph {
         indegree = new int[vertices];
         for (int vertex = 0; vertex < vertices; vertex++)
             this.indegree[vertex] = G.indegree(vertex);
+        
+        // update adjacency lists
+        list = (Bag<Integer>[]) new Bag[vertices];
+        for (int vertex = 0; vertex < vertices; vertex++) {
+            list[vertex] = new Bag<Integer>();
+        }
     }
       
       
