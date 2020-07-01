@@ -1,7 +1,11 @@
 //adjacency list directed graph implementation
 
 public class DirectedGraph {
-
+    private static final String NEWLINE = System.getProperty("line.separator");
+    private final int vertices;           // number of vertices in this digraph
+    private int edges;                 // number of edges in this digraph
+    private Bag<Integer>[] list;    // list[v] = adjacency list for vertex v
+    private int[] indegree;        // indegree[v] = indegree of vertex v
     
     // Initializes an empty digraph with vertices.
     public DirectedGraph(int vertices) {
