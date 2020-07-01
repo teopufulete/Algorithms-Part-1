@@ -8,11 +8,16 @@ class Graph {
   
     // Constructor 
     public Graph(int vertex) { 
-       
+        this.vertex = vertex;
+        list = new LinkedList[vertex];
+        
+        for (int i = 0; i < vertex ; i++) {
+            list[i] = new LinkedList<>();
+        }
     } 
   
     // Function to add an edge into the graph 
-    void addEdge(int v,int w) { 
+    void addEdge(int source, int destination) { 
        
     } 
   
