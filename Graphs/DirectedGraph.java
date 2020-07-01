@@ -1,4 +1,4 @@
-//adjacency list directed graph implementation
+// adjacency list directed graph implementation
 
 public class DirectedGraph {
     
@@ -56,6 +56,11 @@ public class DirectedGraph {
         this.vertices = G.vertices();
         this.edges = G.edges();
         if (vertices < 0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
+        
+        // update indegrees
+        indegree = new int[vertices];
+        for (int vertex = 0; vertex < vertices; vertex++)
+            this.indegree[vertex] = G.indegree(vertex);
     }
       
       
