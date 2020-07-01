@@ -64,7 +64,7 @@ public class DirectedGraph {
 
     // Returns the number of edges in this digraph.
     public int edges() {
-        
+        return edges;
     }
 
 
