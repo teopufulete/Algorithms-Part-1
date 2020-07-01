@@ -67,6 +67,17 @@ public class DirectedGraph {
         for (int vertex = 0; vertex < vertices; vertex++) {
             list[vertex] = new Bag<Integer>();
         }
+        
+        for (int vertex = 0; vertex < G.vertices(); vertex++) {
+            // reverse so that adjacency list is in same order as original
+            Stack<Integer> reverse = new Stack<Integer>();
+            for (int destination : G.list[vertex]) {
+                reverse.push(destination);
+            }
+            for (int destination : reverse) {
+                list[vertex].add(destination);
+            }
+        }
     }
       
       
