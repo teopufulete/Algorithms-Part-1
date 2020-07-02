@@ -124,7 +124,8 @@ public class DirectedGraph {
 
     // Returns the number of directed edges incident to vertex 
     public int indegree(int vertex) {
-        
+        validateVertex(vertex);
+        return indegree[vertex];
     }
 
 
