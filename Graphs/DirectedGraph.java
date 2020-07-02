@@ -24,7 +24,7 @@ public class DirectedGraph {
     
     // Initializes a digraph from the specified input stream. 
     public DirectedGraph(In input) {
-        if (in == null) throw new IllegalArgumentException("argument is null");
+        if (input == null) throw new IllegalArgumentException("argument is null");
         try {
             this.vertices = in.readInt();
             if (vertices < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be nonnegative");
@@ -156,6 +156,8 @@ public class DirectedGraph {
 
     // Unit test client
     public static void main(String[] args) {
-        
+        In input = new In(args[0]);
+        Digraph G = new Digraph(in);
+        StdOut.println(G);
     }
 }
