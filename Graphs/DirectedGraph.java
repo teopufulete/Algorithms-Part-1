@@ -102,7 +102,7 @@ public class DirectedGraph {
     // Adds the directed edge vertex→destination to this digraph.
     public void addEdge(int vertex, int destination) {
         validateVertex(destination);
-        adj[vertex].add(destination);
+        list[vertex].add(destination);
         indegree[destination]++;
         edge++;
     }
@@ -110,7 +110,8 @@ public class DirectedGraph {
 
     // Returns the vertices adjacent from vertex in this digraph.
     public Iterable<Integer> adj(int vertex) {
-   
+        validateVertex(vertex);
+        return list[vertex];
     }
 
 
