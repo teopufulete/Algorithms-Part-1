@@ -143,6 +143,13 @@ public class DirectedGraph {
 
     // Returns a string representation of the graph.
     public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append(vertices + " vertices, " + edge + " edges " + NEWLINE);
+        for (int vertex = 0; vertex < vertices; vertex++) {
+            s.append(String.format("%d: ", vertex));
+
+        }
+     
 
     }
 
