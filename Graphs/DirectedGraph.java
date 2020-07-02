@@ -94,7 +94,8 @@ public class DirectedGraph {
 
 
     private void validateVertex(int vertex) {
-        
+        if (vertex < 0 || vertex >= vertices)
+            throw new IllegalArgumentException("vertex " + vertex + " is not between 0 and " + (vertices - 1));
     }
 
 
