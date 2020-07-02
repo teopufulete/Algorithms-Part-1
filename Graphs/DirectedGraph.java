@@ -147,11 +147,12 @@ public class DirectedGraph {
         s.append(vertices + " vertices, " + edge + " edges " + NEWLINE);
         for (int vertex = 0; vertex < vertices; vertex++) {
             s.append(String.format("%d: ", vertex));
-
+            }
+            s.append(NEWLINE);
         }
-     
-
+        return s.toString();
     }
+
 
     // Unit test client
     public static void main(String[] args) {
