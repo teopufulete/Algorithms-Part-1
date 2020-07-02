@@ -131,7 +131,13 @@ public class DirectedGraph {
 
     // Returns the reverse of the digraph.
     public Digraph reverse() {
-        
+        Digraph reverse = new Digraph(vertices);
+        for (int vertex = 0; vertex < vertices; vertex++) {
+            for (int destination : int(vertex)) {
+                reverse.addEdge(destination, vertex);
+            }
+        }
+        return reverse;        
     }
 
 
