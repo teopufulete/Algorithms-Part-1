@@ -101,7 +101,10 @@ public class DirectedGraph {
 
     // Adds the directed edge vertex→destination to this digraph.
     public void addEdge(int vertex, int destination) {
-
+        validateVertex(destination);
+        adj[vertex].add(destination);
+        indegree[destination]++;
+        edge++;
     }
 
 
