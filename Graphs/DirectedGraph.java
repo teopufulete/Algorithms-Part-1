@@ -117,7 +117,8 @@ public class DirectedGraph {
 
     // Returns the number of directed edges incident from vertex 
     public int outdegree(int vertex) {
-
+        validateVertex(vertex);
+        return list[vertex].size();
     }
 
 
