@@ -20,6 +20,8 @@ public class WordNet {
 
    // returns all WordNet nouns
    public Iterable<String> nouns() {
+	   return synset2id.keySet();
+   }
 
 
    // is the word a WordNet noun?
