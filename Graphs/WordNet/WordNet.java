@@ -8,12 +8,18 @@ public class WordNet {
 	private Map<String, Bag<Integer>> synset2id;
 	private SAP sap;
 
+	
    // constructor takes the name of the two input files
-   public WordNet(String synsets, String hypernyms) 
+   public WordNet(String synsets, String hypernyms) {
+	   id2SynsetDefinition = new HashMap<Integer, String>();
+	   synset2id = new HashMap<String, Bag<Integer>>();
+	   createMaps(synsets);
+	   createSAP(hypernyms);
+   }
 
 
    // returns all WordNet nouns
-   public Iterable<String> nouns()
+   public Iterable<String> nouns() {
 
 
    // is the word a WordNet noun?
@@ -28,7 +34,11 @@ public class WordNet {
    // in a shortest ancestral path 
    public String sap(String nounA, String nounB)
       
-     
+	   
+   private void createMaps(String synsets) 
+      
+      
+   private void createSAP(String hypernyms)
       
 
    // do unit testing of this class
