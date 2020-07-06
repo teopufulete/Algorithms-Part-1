@@ -31,7 +31,10 @@ public class WordNet {
 
 
    // distance between nounA and nounB 
-   public int distance(String nounA, String nounB)
+   public int distance(String nounA, String nounB) {
+	   if (!isNoun(nounA) || !isNoun(nounB)) throw new java.lang.IllegalArgumentException("No such nouns in WordNet!");
+	   return sap.length(synset2id.get(nounA), synset2id.get(nounB));
+   }
 
 
    // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
