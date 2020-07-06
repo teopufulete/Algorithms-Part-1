@@ -77,7 +77,9 @@ public class WordNet {
 	   
       
       
-   private void createSAP(String hypernyms)
+   private void createSAP(String hypernyms) {
+	   In in = new In(hypernyms);
+	   Digraph diG = new Digraph(id2SynsetDefinition.size());
       
 
    // do unit testing of this class
