@@ -54,6 +54,10 @@ public class WordNet {
 		   for (int i = 0; i < fields.length; i++) {
 			   fields[i] = fields[i].trim();
 		   }
+		   
+		   int id = Integer.parseInt(fields[0]);
+		   String synsetDefinition = fields[1] + "," + fields[2];
+		   id2SynsetDefinition.put(id, synsetDefinition);
 	   
       
       
