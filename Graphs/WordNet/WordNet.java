@@ -103,7 +103,17 @@ public class WordNet {
 	   if (diCycle.hasCycle()) {
 		   return false;
 	   }
+	   
+	   // check if there is one root (root = vertex with no outgoing edges)
+	   int roots = 0;
+	   for (int vertex = 0; vertex < diG.V(); vertex++) {
+		   if (!diG.adj(vertex).iterator().hasNext()) roots++;
+	   }
+	   if (roots != 1) return false;
+	   return true;
+   }	   
 
+	
    // do unit testing of this class
    public static void main(String[] args)
 }
