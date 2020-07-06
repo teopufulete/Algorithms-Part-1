@@ -46,7 +46,15 @@ public class WordNet {
    }   
       
 	   
-   private void createMaps(String synsets) 
+   private void createMaps(String synsets) {
+	   In in = new In(synsets);
+	   while (in.hasNextLine()) {
+		   String curString = in.readLine();
+		   String[] fields = curString.split(",");
+		   for (int i = 0; i < fields.length; i++) {
+			   fields[i] = fields[i].trim();
+		   }
+	   
       
       
    private void createSAP(String hypernyms)
