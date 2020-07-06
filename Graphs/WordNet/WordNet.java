@@ -96,7 +96,13 @@ public class WordNet {
 	   sap = new SAP(diG);
    }
 	   
-      
+   
+   private boolean isRootedDAG(Digraph diG) {
+	   // check if there is no Cycle 
+	   DirectedCycle diCycle = new DirectedCycle(diG);
+	   if (diCycle.hasCycle()) {
+		   return false;
+	   }
 
    // do unit testing of this class
    public static void main(String[] args)
