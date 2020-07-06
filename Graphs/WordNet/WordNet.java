@@ -63,6 +63,17 @@ public class WordNet {
 		   for (int i = 0; i < synonyms.length; i++) {
 			   synonyms[i] = synonyms[i].trim();
 			   Bag<Integer> bag = synset2id.get(synonyms[i]);
+			   if (bag == null) {
+				   Bag<Integer> newBag = new Bag<Integer>();
+		             	   newBag.add(id);
+		             	   synset2id.put(synonyms[i], newBag);
+		          }
+		          else {
+				  bag.add(id);
+		          }
+		   }
+	   }
+   }
 	   
       
       
