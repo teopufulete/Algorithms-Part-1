@@ -80,6 +80,12 @@ public class WordNet {
    private void createSAP(String hypernyms) {
 	   In in = new In(hypernyms);
 	   Digraph diG = new Digraph(id2SynsetDefinition.size());
+	   while (in.hasNextLine()) {
+		   String curString = in.readLine();
+		   String[] fields = curString.split(",");
+		   for (int i = 0; i < fields.length; i++) {
+			   fields[i] = fields[i].trim();
+		   }
       
 
    // do unit testing of this class
