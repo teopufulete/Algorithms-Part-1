@@ -89,6 +89,9 @@ public class WordNet {
 		   for (int i = 1; i < fields.length; i++) {
 			   diG.addEdge(Integer.parseInt(fields[0]), Integer.parseInt(fields[i]));
 		   }
+	   } 
+	   if(!isRootedDAG(diG)) {
+		   throw new java.lang.IllegalArgumentException("Not rooted DAG!");
 	   }   
       
 
