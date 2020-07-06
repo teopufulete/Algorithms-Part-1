@@ -86,6 +86,10 @@ public class WordNet {
 		   for (int i = 0; i < fields.length; i++) {
 			   fields[i] = fields[i].trim();
 		   }
+		   for (int i = 1; i < fields.length; i++) {
+			   diG.addEdge(Integer.parseInt(fields[0]), Integer.parseInt(fields[i]));
+		   }
+	   }   
       
 
    // do unit testing of this class
