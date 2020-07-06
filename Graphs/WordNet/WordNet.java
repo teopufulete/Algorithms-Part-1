@@ -92,7 +92,10 @@ public class WordNet {
 	   } 
 	   if(!isRootedDAG(diG)) {
 		   throw new java.lang.IllegalArgumentException("Not rooted DAG!");
-	   }   
+	   } 
+	   sap = new SAP(diG);
+   }
+	   
       
 
    // do unit testing of this class
