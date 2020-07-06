@@ -37,9 +37,13 @@ public class WordNet {
    }
 
 
-   // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
-   // in a shortest ancestral path 
-   public String sap(String nounA, String nounB)
+   // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB in a shortest ancestral path 
+   public String sap(String nounA, String nounB) {
+	   if (!isNoun(nounA) || !isNoun(nounB)) throw new java.lang.IllegalArgumentException("No such nouns in WordNet!");
+	   int ancestorId = sap.ancestor(synset2id.get(nounA), synset2id.get(nounB));
+	   String valueFields[] = id2SynsetDefinition.get(ancestorId).split(",");
+	   return valueFields[0];
+   }   
       
 	   
    private void createMaps(String synsets) 
