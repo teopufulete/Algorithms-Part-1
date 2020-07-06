@@ -115,5 +115,20 @@ public class WordNet {
 
 	
    // do unit testing of this class
-   public static void main(String[] args)
+   public static void main(String[] args) {
+	   WordNet wordnet = new WordNet(args[0], args[1]);
+	   for (String s : wordnet.nouns()) {
+		   StdOut.println(s);
+	   }
+	   
+	   while (!StdIn.isEmpty()) {
+		   String nounX = StdIn.readLine();
+	           String nounY = StdIn.readLine();
+	           int distance   = wordnet.distance(nounX, nounY);
+	           String ancestor = wordnet.sap(nounX, nounY);
+	           StdOut.println("length = " + distance);
+	           StdOut.println("ancestor = " + ancestor);
+	   }
+    } 	
+	
 }
