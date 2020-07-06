@@ -58,6 +58,11 @@ public class WordNet {
 		   int id = Integer.parseInt(fields[0]);
 		   String synsetDefinition = fields[1] + "," + fields[2];
 		   id2SynsetDefinition.put(id, synsetDefinition);
+		   
+		   String synonyms[] = fields[1].split(" ");
+		   for (int i = 0; i < synonyms.length; i++) {
+			   synonyms[i] = synonyms[i].trim();
+			   Bag<Integer> bag = synset2id.get(synonyms[i]);
 	   
       
       
