@@ -55,4 +55,9 @@ public class ConnectedComponents {
         }
     }
 
+    // Returns the component id of the connected component containing vertex v
+    public int id(int v) {
+        validateVertex(v);
+        return id[v];
+    }
 }
