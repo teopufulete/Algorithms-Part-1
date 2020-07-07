@@ -66,4 +66,9 @@ public class ConnectedComponents {
         validateVertex(v);
         return size[id[v]];
     }
+    
+    // return the number of connected components in the graph {@code G}
+    public int count() {
+        return count;
+    }
 }
