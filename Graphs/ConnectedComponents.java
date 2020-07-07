@@ -16,8 +16,7 @@ public class ConnectedComponents {
             }
         }
     }
-    
-    
+   
    // Computes the connected components of the edge-weighted graph 
     public ConnectedComponents(EdgeWeightedGraph G) {
         marked = new boolean[G.V()];
@@ -30,8 +29,7 @@ public class ConnectedComponents {
             }
         }
     }
-    
-    
+      
     // depth-first search for a Graph
     private void dfs(Graph G, int v) {
         marked[v] = true;
@@ -43,4 +41,18 @@ public class ConnectedComponents {
             }
         }
     }
+    
+    // depth-first search for an EdgeWeightedGraph
+    private void dfs(EdgeWeightedGraph G, int v) {
+        marked[v] = true;
+        id[v] = count;
+        size[count]++;
+        for (Edge e : G.adj(v)) {
+            int w = e.other(v);
+            if (!marked[w]) {
+                dfs(G, w);
+            }
+        }
+    }
+
 }
