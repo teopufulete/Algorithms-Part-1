@@ -85,4 +85,17 @@ public class ConnectedComponents {
         if (v < 0 || v >= V)
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
     }
+    
+    // unit testing
+    public static void main(String[] args) {
+        In in = new In(args[0]);
+        Graph G = new Graph(in);
+        CC cc = new CC(G);
+
+        // number of connected components
+        int m = cc.count();
+        StdOut.println(m + " components");
+
+       
+    }
 }
