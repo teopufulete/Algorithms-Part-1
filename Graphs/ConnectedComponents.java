@@ -60,4 +60,10 @@ public class ConnectedComponents {
         validateVertex(v);
         return id[v];
     }
+    
+    // Returns the number of vertices in the connected component containing vertex {@code v}.
+    public int size(int v) {
+        validateVertex(v);
+        return size[id[v]];
+    }
 }
