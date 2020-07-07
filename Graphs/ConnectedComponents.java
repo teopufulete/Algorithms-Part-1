@@ -79,4 +79,10 @@ public class ConnectedComponents {
         validateVertex(w);
         return id(v) == id(w);
     }
+    
+    private void validateVertex(int v) {
+        int V = marked.length;
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
 }
