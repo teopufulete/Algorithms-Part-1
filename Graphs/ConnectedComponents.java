@@ -71,4 +71,12 @@ public class ConnectedComponents {
     public int count() {
         return count;
     }
+    
+    
+    // Returns true if vertices v and w are in the same connected component.
+    public boolean connected(int v, int w) {
+        validateVertex(v);
+        validateVertex(w);
+        return id(v) == id(w);
+    }
 }
