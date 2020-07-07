@@ -30,4 +30,17 @@ public class ConnectedComponents {
             }
         }
     }
+    
+    
+    // depth-first search for a Graph
+    private void dfs(Graph G, int v) {
+        marked[v] = true;
+        id[v] = count;
+        size[count]++;
+        for (int w : G.adj(v)) {
+            if (!marked[w]) {
+                dfs(G, w);
+            }
+        }
+    }
 }
