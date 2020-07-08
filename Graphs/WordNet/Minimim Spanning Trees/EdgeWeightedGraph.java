@@ -116,13 +116,14 @@ public class EdgeWeightedGraph {
     // Returns the edges connected to vertex v
     public Iterable<Edge> adjacent(int v) {
         validateVertex(v);
-        return adj[v];
+        return adjacent[v];
     }
 
     
     // Returns the degree of vertex v
     public int degree(int v) {
-       
+        validateVertex(v);
+        return adjacent[v].size();
     }
 
     
