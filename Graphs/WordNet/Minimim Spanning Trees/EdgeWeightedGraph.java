@@ -5,7 +5,7 @@ public class EdgeWeightedGraph {
 
     private final int V;
     private int E;
-    private Bag<Edge>[] adj;
+    private Bag<Edge>[] adjacent;
     
     // Initializ an empty edge-weighted graph with v vertices and 0 edges.
     public EdgeWeightedGraph(int V) {
