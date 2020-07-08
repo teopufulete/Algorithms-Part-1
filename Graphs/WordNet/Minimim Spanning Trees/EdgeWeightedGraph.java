@@ -68,7 +68,18 @@ public class EdgeWeightedGraph {
     
     // Initialize a new edge-weighted graph that is a deep copy of G
     public EdgeWeightedGraph(EdgeWeightedGraph G) {
-
+        this(G.V());
+        this.E = G.E();
+        for (int v = 0; v < G.V(); v++) {
+            // reverse so that adjacency list is in same order as original
+            Stack<Edge> reverse = new Stack<Edge>();
+            for (Edge e : G.adj[v]) {
+                reverse.push(e);
+            }
+            for (Edge e : reverse) {
+                adjacent[v].add(e);
+            }
+        }
     }
 
 
