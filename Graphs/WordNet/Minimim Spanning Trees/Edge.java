@@ -24,5 +24,16 @@ public class Edge implements Comparable<Edge> {
         return v;
     }
 
-   
+    // return endpoint of edge that is different from given vertex.
+    public int other(int vertex) {
+        if(vertex == v) return w;
+        else if (vertex == w) return v;
+        else throw new IllegalArgumentException("Illegal endpoint");
+    }
+
+    // Compares two edges by weight.
+    public int compareTo(Edge that) {
+        return Double.compare(this.weight, that.weight);
+    }
+
 }
