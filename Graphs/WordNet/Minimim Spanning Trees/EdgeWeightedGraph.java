@@ -149,13 +149,23 @@ public class EdgeWeightedGraph {
     
     // String representation of the edge-weighted graph.
     public String toString() {
-        
+        StringBuilder s = new StringBuilder();
+        s.append(V + " " + E + NEWLINE);
+        for (int v = 0; v < V; v++) {
+            s.append(v + ": ");
+            for (Edge e : adj[v]) {
+                s.append(e + "  ");
+            }
+            s.append(NEWLINE);
+        }
+        return s.toString();
     }
 
     
     // Unit tests 
     public static void main(String[] args) {
-
+        In in = new In(args[0]);
+        EdgeWeightedGraph G = new EdgeWeightedGraph(in);
+        StdOut.println(G);
     }
-
 }
