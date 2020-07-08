@@ -114,7 +114,9 @@ public class EdgeWeightedGraph {
 
     
     // Returns the edges connected to vertex v
-    public Iterable<Edge> adj(int v) {
+    public Iterable<Edge> adjacent(int v) {
+        validateVertex(v);
+        return adj[v];
     }
 
     
