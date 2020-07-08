@@ -103,6 +103,13 @@ public class EdgeWeightedGraph {
     
     // Adds the undirected edge e to graph.
     public void addEdge(Edge e) {
+        int v = e.either();
+        int w = e.other(v);
+        validateVertex(v);
+        validateVertex(w);
+        adj[v].add(e);
+        adj[w].add(e);
+        E++;
     }
 
     
