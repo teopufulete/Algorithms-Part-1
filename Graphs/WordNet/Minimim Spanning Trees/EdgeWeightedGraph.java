@@ -21,8 +21,17 @@ public class EdgeWeightedGraph {
     }
 
     
-    // Initialize a random edge-weighted graph with v vertices and E edges.
+    // Initialize a random edge-weighted graph with V vertices and E edges.
     public EdgeWeightedGraph(int V, int E) {
+        this(V);
+        if (E < 0) throw new IllegalArgumentException("Number of edges must be nonnegative");
+        for (int i = 0; i < E; i++) {
+            int v = StdRandom.uniform(V);
+            int w = StdRandom.uniform(V);
+            double weight = Math.round(100 * StdRandom.uniform()) / 100.0;
+            Edge e = new Edge(v, w, weight);
+            addEdge(e);
+        }
     }
     
 
