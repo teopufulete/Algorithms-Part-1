@@ -13,5 +13,16 @@ public class Edge implements Comparable<Edge> {
         this.w = w;
         this.weight = weight;
     }
+    
+     // Return weight of this edge.
+    public double weight() {
+        return weight;
+    }
 
+    // return either endpoint of this edge.
+    public int either() {
+        return v;
+    }
+
+   
 }
