@@ -24,6 +24,9 @@ public class KruskalMST {
                 weight += e.weight();
             }
         }
+        
+        // check optimality conditions
+        assert check(G);
     }
 
 
@@ -38,6 +41,10 @@ public class KruskalMST {
         return weight;
     }
 
+    
+    // check optimality conditions
+    private boolean check(EdgeWeightedGraph G) {
+    }
 
     // Unit tests 
     public static void main(String[] args) {
