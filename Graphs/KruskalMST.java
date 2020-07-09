@@ -4,8 +4,13 @@ public class KruskalMST {
     private Queue<Edge> mst = new Queue<Edge>();  // edges in MST
 
 
-    // minimum spanning tree (or forest) of an edge-weighted graph.
+    // minimum spanning tree (or forest) of an edge-weighted graph
     public KruskalMST(EdgeWeightedGraph G) {
+        // more efficient to build heap by passing array of edges instead of prioriy queue
+        MinPQ<Edge> pq = new MinPQ<Edge>();
+        for (Edge e : G.edges()) {
+            pq.insert(e);
+        }
     }
 
 
