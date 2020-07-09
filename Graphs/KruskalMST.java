@@ -44,6 +44,16 @@ public class KruskalMST {
     
     // check optimality conditions
     private boolean check(EdgeWeightedGraph G) {
+        // check total weight
+        double total = 0.0;
+        for (Edge e : edges()) {
+            total += e.weight();
+        }
+        
+        if (Math.abs(total - weight()) > FLOATING_POINT_EPSILON) {
+            System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", total, weight());
+            return false;
+        }
     }
 
     // Unit tests 
