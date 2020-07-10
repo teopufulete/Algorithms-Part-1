@@ -64,6 +64,15 @@ public class KruskalMST {
             }
             uf.union(v, w);
         }
+        
+        // check that it is a spanning forest
+        for (Edge e : G.edges()) {
+            int v = e.either(), w = e.other(v);
+            if (uf.find(v) != uf.find(w)) {
+                System.err.println("Not a spanning forest");
+                return false;
+            }
+        }
     }
 
     // Unit tests 
