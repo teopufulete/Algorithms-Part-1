@@ -83,6 +83,19 @@ public class KruskalMST {
                 int x = f.either(), y = f.other(x);
                 if (f != e) uf.union(x, y);
             }
+            
+            // check that e is min weight edge in crossing cut
+            for (Edge f : G.edges()) {
+                int x = f.either(), y = f.other(x);
+                if (uf.find(x) != uf.find(y)) {
+                    if (f.weight() < e.weight()) {
+                        System.err.println("Edge " + f + " violates cut optimality conditions");
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     // Unit tests 
