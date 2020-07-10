@@ -49,10 +49,20 @@ public class KruskalMST {
         for (Edge e : edges()) {
             total += e.weight();
         }
-        
         if (Math.abs(total - weight()) > FLOATING_POINT_EPSILON) {
             System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", total, weight());
             return false;
+        }
+        
+        // check that it is acyclic
+        UF uf = new UF(G.V());
+        for (Edge e : edges()) {
+            int v = e.either(), w = e.other(v);
+            if (uf.find(v) == uf.find(w)) {
+                System.err.println("Not a forest");
+                return false;
+            }
+            uf.union(v, w);
         }
     }
 
