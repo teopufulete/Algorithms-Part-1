@@ -9,7 +9,13 @@ public class SAP {
 	
    // constructor takes a digraph (not necessarily a DAG)
    public SAP(Digraph G) {
-
+	this.digraph = G;
+        this.lastV = -1;
+        this.lastW = -1;
+        this.lastVI = null;
+        this.lastWI = null;
+        this.lastLength = -1;
+	this.lastAncestor = -1;
    }
    
    
@@ -67,10 +73,10 @@ public class SAP {
 
    }
    
-   
-	 // for unit testing of this class 
-	 public static void main(String[] args) {
-	    
-	 }
+	
+   // for unit testing of this class 
+   public static void main(String[] args) {
+	   
+   }
 
 }
