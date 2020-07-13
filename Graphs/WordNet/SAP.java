@@ -16,6 +16,13 @@ public class SAP {
 
    // length of shortest ancestral path between v and w; -1 if no such path
    public int length(int v, int w) {
+	checkInput(v);
+        checkInput(w);
+        if ((lastV == v && lastW == w) || (lastV == w && lastW == v)) {
+            return lastLength;
+        }
+        bfs(v, w);
+        return lastLength;
 
    }
 
