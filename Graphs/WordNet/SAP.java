@@ -83,7 +83,9 @@ public class SAP {
    
 	
    private void checkInput(Iterable<Integer> vertex) {
-      
+        for (Integer v : vertex) {
+		if (v < 0 || v > digraph.V() - 1) throw new java.lang.IndexOutOfBoundsException();
+        }
    }
    
 	
