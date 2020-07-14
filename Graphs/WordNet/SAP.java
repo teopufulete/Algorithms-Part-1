@@ -100,7 +100,12 @@ public class SAP {
    
 	
    private void cache(Iterable<Integer> v, Iterable<Integer> w, int length, int ancestor) {
-       
+        lastV = -1;
+        lastW = -1;
+        lastVI = v;
+        lastWI = w;
+        lastLength = length;
+        lastAncestor = ancestor;
    }
    
 	
