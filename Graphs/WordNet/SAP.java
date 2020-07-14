@@ -63,12 +63,22 @@ public class SAP {
 	
    // a common ancestor that participates in shortest ancestral path; -1 if no such path
    public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
-	    
+        checkInput(v);
+        checkInput(w);
+           
+        if (lastVI != null && lastWI != null) {
+            if ((lastVI.equals(v) && lastWI.equals(w)) || (lastVI.equals(w) && lastWI.equals(v))) {
+                return lastAncestor;
+            }
+        }
+           
+        bfs(v, w);
+        return lastAncestor;
    }
    
 
    private void checkInput(int vertex) {
-     
+        if (vertex < 0 || vertex > digraph.V() - 1) throw new java.lang.IndexOutOfBoundsException();
    }
    
 	
