@@ -90,7 +90,12 @@ public class SAP {
    
 	
    private void cache(int v, int w, int length, int ancestor) {
-      
+        lastV = v;
+        lastW = w;
+        lastVI = null;
+        lastWI = null;
+        lastLength = length;
+        lastAncestor = ancestor;
    }
    
 	
