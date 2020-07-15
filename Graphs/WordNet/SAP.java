@@ -153,6 +153,15 @@ public class SAP {
 	
    // for unit testing of this class 
    public static void main(String[] args) {
-	   
-   }
+	In in = new In(args[0]);
+        Digraph g = new Digraph(in);
+        SAP sap = new SAP(g);
+        while (!StdIn.isEmpty()) {
+            int v = StdIn.readInt();
+            int w = StdIn.readInt();
+            int length = sap.length(v, w);
+            int ancestor = sap.ancestor(v, w);
+            StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
+        }
+    }
 }
