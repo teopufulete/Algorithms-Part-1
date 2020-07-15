@@ -131,7 +131,23 @@ public class SAP {
 
 
    private void bfs(Iterable<Integer> v, Iterable<Integer> w) {
-
+        BreadthFirstDirectedPaths bfsV = new BreadthFirstDirectedPaths(digraph, v);
+        BreadthFirstDirectedPaths bfsW = new BreadthFirstDirectedPaths(digraph, w);
+        int curLength = Integer.MAX_VALUE;
+        int curAncestor = -1;
+	   
+        for (int vertex = 0; vertex < digraph.V(); vertex++) {
+            if (bfsV.hasPathTo(vertex) && bfsW.hasPathTo(vertex)) {
+                int lengthToVertex = bfsV.distTo(vertex) + bfsW.distTo(vertex);
+                if (lengthToVertex < curLength) {
+                    curLength = lengthToVertex;
+                    curAncestor = vertex;
+                }
+            }
+        }
+	   
+        if (curLength == Integer.MAX_VALUE) curLength = -1;
+        cache(v, w, curLength, curAncestor);
    }
    
 	
