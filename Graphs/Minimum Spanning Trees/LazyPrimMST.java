@@ -33,5 +33,14 @@ public class LazyPrimMST {
             if (!marked[w]) scan(G, w);               // w becomes part of tree
         }
     }
+    
+    
+    // add all edges e incident to v onto priority queue if the other endpoint has not yet been scanned
+    private void scan(EdgeWeightedGraph G, int v) {
+        assert !marked[v];
+        marked[v] = true;
+        for (Edge e : G.adjacent(v))
+            if (!marked[e.other(v)]) priorityQueue.insert(e);
+    }
 }
 
