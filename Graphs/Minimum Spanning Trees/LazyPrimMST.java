@@ -42,5 +42,11 @@ public class LazyPrimMST {
         for (Edge e : G.adjacent(v))
             if (!marked[e.other(v)]) priorityQueue.insert(e);
     }
+    
+    
+    // Returns the edges in mst (or forest).
+    public Iterable<Edge> edges() {
+        return mst;
+    }
 }
 
