@@ -48,5 +48,11 @@ public class LazyPrimMST {
     public Iterable<Edge> edges() {
         return mst;
     }
+    
+    
+    // returns sum of edges in mst
+    public double weight() {
+        return weight;
+    }    
 }
 
