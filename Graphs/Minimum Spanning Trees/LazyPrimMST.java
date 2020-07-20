@@ -88,6 +88,16 @@ public class LazyPrimMST {
                 return false;
             }
         }
+        
+        // check if minimal spanning forest 
+        for (Edge e : edges()) {
+
+            // all edges in MST except e
+            uf = new UF(G.V());
+            for (Edge f : mst) {
+                int x = f.either(), y = f.other(x);
+                if (f != e) uf.union(x, y);
+            }
     }
 }
 
