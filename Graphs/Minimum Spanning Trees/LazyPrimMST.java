@@ -53,6 +53,21 @@ public class LazyPrimMST {
     // returns sum of edges in mst
     public double weight() {
         return weight;
-    }    
+    } 
+    
+    
+    // check optimality conditions 
+    private boolean check(EdgeWeightedGraph G) {
+
+        // check weight
+        double totalWeight = 0.0;
+        for (Edge e : edges()) {
+            totalWeight += e.weight();
+        }
+        if (Math.abs(totalWeight - weight()) > FLOATING_POINT_EPSILON) {
+            System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", totalWeight, weight());
+            return false;
+        }
+    }
 }
 
