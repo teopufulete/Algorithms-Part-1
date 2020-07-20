@@ -68,6 +68,17 @@ public class LazyPrimMST {
             System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", totalWeight, weight());
             return false;
         }
+        
+        // check if acyclic
+        UF uf = new UF(G.V());
+        for (Edge e : edges()) {
+            int v = e.either(), w = e.other(v);
+            if (uf.find(v) == uf.find(w)) {
+                System.err.println("Not a forest");
+                return false;
+            }
+            uf.union(v, w);
+        }
     }
 }
 
