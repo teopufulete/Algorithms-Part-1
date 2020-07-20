@@ -79,6 +79,15 @@ public class LazyPrimMST {
             }
             uf.union(v, w);
         }
+        
+        // check if spanning forest
+        for (Edge e : G.edges()) {
+            int v = e.either(), w = e.other(v);
+            if (uf.find(v) != uf.find(w)) {
+                System.err.println("Not a spanning forest");
+                return false;
+            }
+        }
     }
 }
 
