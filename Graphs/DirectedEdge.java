@@ -30,7 +30,7 @@ public class DirectedEdge {
 
     
     public String toString() {
-        
+        return v + "->" + w + " " + String.format("%5.2f", weight);        
     }
 
     //unit testing
