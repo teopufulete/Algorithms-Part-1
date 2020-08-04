@@ -23,9 +23,9 @@ public class DirectedEdge {
         return w;
     }
 
-   
+    //return weight of directed edge.
     public double weight() {
-        
+        return weight;
     }
 
     
