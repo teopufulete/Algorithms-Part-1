@@ -3,7 +3,7 @@ public class DirectedEdge {
     private final int w;
     private final double weight;
 
-
+    //Initialize directed edge from vertex v to vertex w with given weight
     public DirectedEdge(int v, int w, double weight) {
         if (v < 0) throw new IllegalArgumentException("Vertex names must be nonnegative integers");
         if (w < 0) throw new IllegalArgumentException("Vertex names must be nonnegative integers");
