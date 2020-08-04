@@ -13,9 +13,9 @@ public class DirectedEdge {
         this.weight = weight;
     }
     
-    
+    //return tail vertex of directed edge
     public int from() {
-
+        return v;
     }
 
 
