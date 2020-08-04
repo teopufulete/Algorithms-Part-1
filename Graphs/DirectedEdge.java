@@ -18,9 +18,9 @@ public class DirectedEdge {
         return v;
     }
 
-
+    //return head vertex of directed edge
     public int to() {
-        
+        return w;
     }
 
    
