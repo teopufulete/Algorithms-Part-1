@@ -45,9 +45,11 @@ public class DijkstraSP {
         } 
     }
 
-   
+    
+    // return length of shortest path from the source vertex s to vertex v
     public double distTo(int v) {
-        
+        validateVertex(v);
+        return distTo[v]; 
     }
 
     
