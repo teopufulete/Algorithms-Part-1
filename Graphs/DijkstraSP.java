@@ -33,8 +33,6 @@ public class DijkstraSP {
         assert check(G, s);
     }
 
-    }
-
    
     private void relax(DirectedEdge e) {
         
