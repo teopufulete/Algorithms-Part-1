@@ -60,12 +60,19 @@ public class DijkstraSP {
     }
 
     
+    // return shortest path from s to v
     public Iterable<DirectedEdge> pathTo(int v) {
-
+        validateVertex(v);
+        if (!hasPathTo(v)) return null;
+        Stack<DirectedEdge> path = new Stack<DirectedEdge>();
+        for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[e.from()]) {
+            path.push(e);
+        }
+        return path;
     }
 
 
-    
+    //
     private boolean check(EdgeWeightedDigraph G, int s) {
 
     }
