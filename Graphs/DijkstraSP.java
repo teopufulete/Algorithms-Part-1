@@ -33,9 +33,16 @@ public class DijkstraSP {
         assert check(G, s);
     }
 
-   
+    
+    // relax edge e and update pq if changed
     private void relax(DirectedEdge e) {
-        
+        int v = e.from(), w = e.to();
+        if (distTo[w] > distTo[v] + e.weight()) {
+            distTo[w] = distTo[v] + e.weight();
+            edgeTo[w] = e;
+            if (pq.contains(w)) pq.decreaseKey(w, distTo[w]);
+            else pq.insert(w, distTo[w]);
+        } 
     }
 
    
