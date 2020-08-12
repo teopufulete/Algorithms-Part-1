@@ -72,8 +72,19 @@ public class DijkstraSP {
     }
 
 
-    //
+    // check optimality conditions:
+    // (i) for all edges e:            distTo[e.to()] <= distTo[e.from()] + e.weight()
+    // (ii) for all edge e on the SPT: distTo[e.to()] == distTo[e.from()] + e.weight()
     private boolean check(EdgeWeightedDigraph G, int s) {
+        // check that edge weights are nonnegative
+        for (DirectedEdge e : G.edges()) {
+            if (e.weight() < 0) {
+                System.err.println("negative edge weight detected");
+                return false;
+            }
+        }
+        
+        
 
     }
 
