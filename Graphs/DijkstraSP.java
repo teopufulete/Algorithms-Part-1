@@ -97,7 +97,16 @@ public class DijkstraSP {
             }
         }
         
-
+         // check that all edges e = v->w satisfy distTo[w] <= distTo[v] + e.weight()
+        for (int v = 0; v < G.V(); v++) {
+            for (DirectedEdge e : G.adj(v)) {
+                int w = e.to();
+                if (distTo[v] + e.weight() < distTo[w]) {
+                    System.err.println("edge " + e + " not relaxed");
+                    return false;
+                }
+            }
+        }
     }
 
     
