@@ -131,6 +131,9 @@ public class DijkstraSP {
 
     
     public static void main(String[] args) {
+        In in = new In(args[0]);
+        EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
+        int s = Integer.parseInt(args[1]);
         
     }
 }
