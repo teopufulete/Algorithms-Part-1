@@ -107,6 +107,19 @@ public class DijkstraSP {
                 }
             }
         }
+        
+        // check that all edges e = v->w on SPT satisfy distTo[w] == distTo[v] + e.weight()
+        for (int w = 0; w < G.V(); w++) {
+            if (edgeTo[w] == null) continue;
+            DirectedEdge e = edgeTo[w];
+            int v = e.from();
+            if (w != e.to()) return false;
+            if (distTo[v] + e.weight() != distTo[w]) {
+                System.err.println("edge " + e + " on shortest path not tight");
+                return false;
+            }
+        }
+        return true;
     }
 
     
