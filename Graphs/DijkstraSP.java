@@ -84,6 +84,11 @@ public class DijkstraSP {
             }
         }
         
+        // check distTo[v] and edgeTo[v] are consistent
+        if (distTo[s] != 0.0 || edgeTo[s] != null) {
+            System.err.println("distTo[s] and edgeTo[s] inconsistent");
+            return false;
+        }
         
 
     }
