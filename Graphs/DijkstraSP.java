@@ -89,6 +89,13 @@ public class DijkstraSP {
             System.err.println("distTo[s] and edgeTo[s] inconsistent");
             return false;
         }
+        for (int v = 0; v < G.V(); v++) {
+            if (v == s) continue;
+            if (edgeTo[v] == null && distTo[v] != Double.POSITIVE_INFINITY) {
+                System.err.println("distTo[] and edgeTo[] inconsistent");
+                return false;
+            }
+        }
         
 
     }
