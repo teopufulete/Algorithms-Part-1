@@ -28,7 +28,7 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     // initialize an empty priority queue using the given comparator
     public MinPQ(Comparator<Key> comparator) {
-
+        this(1, comparator);
     }
 
     // initialize priority queue from the array of keys
