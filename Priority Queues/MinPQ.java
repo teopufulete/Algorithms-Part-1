@@ -3,6 +3,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class MinPQ<Key> implements Iterable<Key> {
+    private Key[] pq;                    // store items at indices 1 to n
+    private int n;                       // number of items on priority queue
+    private Comparator<Key> comparator;  // optional comparator
     
 
     // initializes  empty priority queue with a given initial capacity
