@@ -8,9 +8,10 @@ public class MinPQ<Key> implements Iterable<Key> {
     private Comparator<Key> comparator;  // optional comparator
     
 
-    // initializes  empty priority queue with a given initial capacity
+    // initialize empty priority queue with a given initial capacity
     public MinPQ(int initCapacity) {
-
+        pq = (Key[]) new Object[initCapacity + 1];
+        n = 0;
     }
 
     // initialize empty priority queue
