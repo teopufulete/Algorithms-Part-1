@@ -45,7 +45,7 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     // check if pq is empty
     public boolean isEmpty() {
-
+        return n == 0;
     }
 
     // return number of keys on priority queue
