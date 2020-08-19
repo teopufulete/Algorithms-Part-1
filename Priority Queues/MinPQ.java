@@ -50,7 +50,7 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     // return number of keys on priority queue
     public int size() {
-
+        return n;
     }
 
     // return smallest key on this priority queue
