@@ -53,10 +53,10 @@ public class MinPQ<Key> implements Iterable<Key> {
         return n;
     }
 
-    // return smallest key on this priority queue
-
+    // return smallest key on priority queue
     public Key min() {
-
+        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        return pq[1];
     }
 
     // helper function to double the size of the heap array
