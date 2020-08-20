@@ -69,9 +69,12 @@ public class MinPQ<Key> implements Iterable<Key> {
         pq = temp;
     }
 
-    // insert new key to this priority queue
+    // insert new key to priority queue
     public void insert(Key x) {
-        
+        // double size of array if necessary
+        if (n == pq.length - 1) resize(2 * pq.length);
+
+              
     }
 
     // remove and return smallest key on this priority queue
