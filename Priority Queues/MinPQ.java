@@ -74,7 +74,10 @@ public class MinPQ<Key> implements Iterable<Key> {
         // double size of array if necessary
         if (n == pq.length - 1) resize(2 * pq.length);
 
-              
+        // add x, and percolate it up to maintain heap invariant
+        pq[++n] = x;
+        swim(n);
+        assert isMinHeap();    
     }
 
     // remove and return smallest key on this priority queue
