@@ -82,7 +82,14 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     // remove and return smallest key on this priority queue
     public Key delMin() {
-
+        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        Key min = pq[1];
+        exch(1, n--);
+        sink(1);
+        pq[n+1] = null;     // to avoid loiterig and help with garbage collection
+        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        assert isMinHeap();
+        return min;
     }
 
 
