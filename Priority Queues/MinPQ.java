@@ -127,7 +127,9 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     private void exch(int i, int j) {
-        
+        Key swap = pq[i];
+        pq[i] = pq[j];
+        pq[j] = swap;  
     }
 
     // is pq[1..n] a min heap?
