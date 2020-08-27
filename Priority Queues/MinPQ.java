@@ -130,6 +130,8 @@ public class MinPQ<Key> implements Iterable<Key> {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;  
+        
+        
     }
 
     // is pq[1..n] a min heap?
@@ -158,7 +160,9 @@ public class MinPQ<Key> implements Iterable<Key> {
     private class HeapIterator implements Iterator<Key> {
         // create a new pq
         private MinPQ<Key> copy;
-
+        
+        public boolean hasNext()  { return !copy.isEmpty();                     }
+        public void remove()      { throw new UnsupportedOperationException();  }
         
         }
         
