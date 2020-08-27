@@ -148,8 +148,9 @@ public class MinPQ<Key> implements Iterable<Key> {
         if (pq[0] != null) return false;
         return isMinHeapOrdered(1);
     }
-
-
+    
+    //return an iterator that iterates over the keys on pq
+     * in ascending order.
     public Iterator<Key> iterator() {
         return new HeapIterator();
     }
