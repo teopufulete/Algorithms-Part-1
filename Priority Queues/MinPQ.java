@@ -81,7 +81,7 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     // remove and return smallest key on this priority queue
-    public Key delMin() {
+    public KeydelMin() {
         if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
         Key min = pq[1];
         exch(1, n--);
@@ -175,8 +175,10 @@ public class MinPQ<Key> implements Iterable<Key> {
         public boolean hasNext()  { return !copy.isEmpty();                     }
         public void remove()      { throw new UnsupportedOperationException();  }
         
+         public Key next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            return copy.delMin();
         }
-        
     }
 
     // unit test
