@@ -156,6 +156,11 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
 
     private class HeapIterator implements Iterator<Key> {
+        // create a new pq
+        private MinPQ<Key> copy;
+
+        
+        }
         
     }
 
