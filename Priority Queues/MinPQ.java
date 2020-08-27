@@ -146,11 +146,15 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     // is subtree of pq[1..n] rooted at k a min heap?
     private boolean isMinHeapOrdered(int k) {
-        
+        if (k > n) return true;
+        int left = 2*k;
+        int right = 2*k + 1;
+        if (left  <= n && greater(k, left))  return false;
+        if (right <= n && greater(k, right)) return false;
+        return isMinHeapOrdered(left) && isMinHeapOrdered(right);
     }
     
-    //return an iterator that iterates over the keys on pq
-     * in ascending order.
+    //return an iterator that iterates over the keys on pq in ascending order
     public Iterator<Key> iterator() {
         return new HeapIterator();
     }
